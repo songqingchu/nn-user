@@ -8,6 +8,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableScheduling
 public class NnUserApplication {
 
+	int b1;
 	public static void main(String[] args) {
 		SpringApplication.run(NnUserApplication.class, args);
 	}
