@@ -11,4 +11,8 @@ public class NnUserApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(NnUserApplication.class, args);
 	}
+	
+	void a1() {
+		
+	}
 }
