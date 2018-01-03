@@ -10,6 +10,7 @@ public class NnUserApplication {
 
 	int a1;
 	
+	int a2;
 	public static void main(String[] args) {
 		SpringApplication.run(NnUserApplication.class, args);
 	}
