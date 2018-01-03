@@ -15,4 +15,8 @@ public class NnUserApplication {
 	void a1() {
 		
 	}
+	
+	void a2() {
+		
+	}
 }
