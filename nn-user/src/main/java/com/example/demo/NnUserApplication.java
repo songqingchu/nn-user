@@ -29,4 +29,8 @@ public class NnUserApplication {
 	void a3() {
 		
 	}
+	
+	void a4() {
+		
+	}
 }
