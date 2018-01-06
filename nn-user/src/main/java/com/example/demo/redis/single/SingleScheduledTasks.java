@@ -1,4 +1,4 @@
-package com.example.demo.task;
+package com.example.demo.redis.single;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import com.alibaba.fastjson.JSON;
 
 @Component
-public class ScheduledTasks {
+public class SingleScheduledTasks {
 
 
 
@@ -18,7 +18,7 @@ public class ScheduledTasks {
 	@Resource
     RedisTemplate redisTemplate ;
     
-    //@Scheduled(fixedRate = 2000)
+   // @Scheduled(fixedRate = 2000)
     public void reportCurrentTime() {
         System.out.println("当前时间：" + dateFormat.format(new Date()));
         Object r=redisTemplate.opsForValue().get("liu");
