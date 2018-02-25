@@ -10,7 +10,7 @@ import redis.clients.jedis.JedisCluster;
 public class RedisClusterTemplate {
 	     private static final Logger LOGGER    = LoggerFactory.getLogger(RedisClusterTemplate.class);
 	 
-	     @Autowired
+	    // @Autowired
 	     private JedisCluster        jedisCluster;
 	 
 	     @Autowired

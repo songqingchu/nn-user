@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" strict="true">
+
+	<Properties>
+		<Property name="local.logging.path">/data/app/nnuser</Property>
+		<Property name="project.name">nnuser</Property>
+
+		<Property name="logging.file.path">${local.logging.path}/${project.name}</Property>
+		<Property name="logging.file.name">${logging.file.path}/${project.name}.log</Property>
+		<Property name="logging.file.error.name">${logging.file.path}/${project.name}-error.log</Property>
+		<Property name="logging.file.monitor.name">${logging.file.path}/monitor.log</Property>
+
+		<Property name="layout">%d %p [%t] %c{10}:%M:%L %m%n</Property>
+	</Properties>
+
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="${layout}" />
+		</Console>
+
+		<RollingRandomAccessFile name="RollingRandomAccessFile"
+			immediateFlush="true" fileName="${logging.file.name}"
+			filePattern="${logging.file.name}.%d{yyyy-MM-dd-HH}">
+			<PatternLayout pattern="${layout}" />
+			<ThresholdFilter level="debug" />
+			<TimeBasedTriggeringPolicy />
+		</RollingRandomAccessFile>
+
+		<RollingRandomAccessFile name="RollingRandomAccessFileError"
+			immediateFlush="true" fileName="${logging.file.error.name}"
+			filePattern="${logging.file.error.name}.%d{yyyy-MM-dd}">
+			<PatternLayout pattern="${layout}" />
+			<ThresholdFilter level="error" />
+			<TimeBasedTriggeringPolicy />
+		</RollingRandomAccessFile>
+		
+		<RollingRandomAccessFile name="MonitorLogFile"
+			immediateFlush="true" fileName="${logging.file.monitor.name}"
+			filePattern="${logging.file.monitor.name}.%d{yyyy-MM-dd}">
+			<PatternLayout pattern="%m%n" />
+			<ThresholdFilter level="info" />
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+			</Policies>
+		</RollingRandomAccessFile>
+
+	</Appenders>
+
+	<Loggers>
+		<Logger name="test" level="info" additivity="false">
+			<AppenderRef ref="MonitorLogFile"/>
+		</Logger>
+
+		<Logger name="com.dianwoba.dispatch.core.ratelimiter" level="warn"/>
+		<Logger name="RocketmqClient" level="warn" />
+		<Logger name="com.alibaba" level="warn" />
+		<Logger name="org.springframework" level="info" />
+		<Logger name="org.apache" level="info" />
+		<Root level="debug">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="RollingRandomAccessFile" />
+			<AppenderRef ref="RollingRandomAccessFileError" />
+		</Root>
+	</Loggers>
+</Configuration>

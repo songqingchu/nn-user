@@ -114,7 +114,6 @@ public class JDK8_features {
 
 	/**
 	 * 5.引入重复注解 1.@Repeatable 2.可以不用以前的“注解容器”写法，直接写2次相同注解即可
-	 * 
 	 * Java 8在编译器层做了优化，相同注解会以集合的方式保存，因此底层的原理并没有变化。
 	 */
 	@Test
@@ -124,7 +123,6 @@ public class JDK8_features {
 
 	/**
 	 * 6.类型注解 新增类型注解:ElementType.TYPE_USE 和ElementType.TYPE_PARAMETER（在Target上）
-	 * 
 	 */
 	@Test
 	public void ElementType() {

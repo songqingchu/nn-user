@@ -1,5 +1,7 @@
 package com.example.demo.redis.cluster;
 
+
+
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -23,17 +25,17 @@ import redis.clients.jedis.JedisPoolConfig;
 public class ClusterScheduledTasks {
 
 
-
+/*
 	private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
 
 	@Resource
 	RedisClusterTemplate redisClusterTemplate ;
     
-    @Scheduled(fixedRate = 3000)
+    @Scheduled(fixedRate = 2000)
     public void reportCurrentTime() {
     	Random r=new Random();
     	int rand=r.nextInt(10);
-        //redisClusterTemplate.set(""+rand,""+rand);
+        redisClusterTemplate.set(""+rand,""+rand);
     	System.out.print("get：" + rand);
         Object result=redisClusterTemplate.get(""+rand);
         System.out.println(",  redis：" + JSON.toJSONString(result));
@@ -78,5 +80,5 @@ public class ClusterScheduledTasks {
 			}
 		}
 		
-	}
+	}*/
 }
