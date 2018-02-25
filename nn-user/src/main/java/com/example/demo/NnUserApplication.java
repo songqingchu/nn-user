@@ -20,6 +20,8 @@ public class NnUserApplication {
 	int a1;
 	
 	int a2;
+	
+	int c1;
 
 
 	public static void main(String[] args) {
