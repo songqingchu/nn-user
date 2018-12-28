@@ -27,6 +27,8 @@ public class JDK8_features {
 	public void testLambda() {
 		list.forEach(System.out::println);
 		list.forEach((Integer e) ->{ System.out.println("方式二：" + e);});
+		list.forEach((Integer e) ->{ System.out.println("方式：" + e);});
+		
 	}
 
 	/**
